@@ -10,18 +10,35 @@
 library(shiny)
 library(plotly)
 
-# Define UI for application that draws a histogram
-shinyUI(fluidPage(
+# Define UI for application that draws a bar plot
+shinyUI(
   
-  titlePanel("Case control study outcome bar chart"),
+  # Use a fluid Bootstrap layout
+  fluidPage(
   
+  # Give the page a title  
+  titlePanel("Streptomycin for TB Dataset Analysis"),
+  
+  # Generate a row with a sidebar
   sidebarLayout(
+    
+    # Define the sidebar with one input
     sidebarPanel(
-      characterInput("ggplot.plot", "Create plot")
+      selectInput(inputId = "improved",
+                  label = "Improvement",
+                  choices = c("Improved" = "TRUE",
+                              "Not improved" = "FALSE")),
+      helpText("1 = Death"),
+      helpText("2 = Considerable Deterioration"),
+      helpText("3 = Moderate Deterioration"),
+      helpText("4 = No Change"),
+      helpText("5 = Moderate Improvement"), 
+      helpText("6 = Considerable Improvement")
     ),
     
+    # Create a spot for the bar plot
     mainPanel(
-      plotOutput("plot")
+      plotlyOutput("plot")
     )
   )
 ))
