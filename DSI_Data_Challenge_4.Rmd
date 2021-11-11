@@ -64,14 +64,6 @@ fig1 <- plot_ly(
 
 fig1
 
-# second plot - bar chart
-p2 <- ggplot(data = strep_imp,
-             aes(x = radiologic_6m, fill = arm)) +
-  geom_bar()
-
-fig2 <- ggplotly(p2)
-fig2
-
 # third plot - scatter plot
 p3 <- ggplot(data = strep_imp,
              aes(x = baseline_condition, fill = arm)) +
