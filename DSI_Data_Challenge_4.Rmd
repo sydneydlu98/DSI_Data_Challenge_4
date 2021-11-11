@@ -5,6 +5,9 @@ date: "11/7/2021"
 output: html_document
 ---
 
+[My github link] https://github.com/sydneydlu98/DSI_Data_Challenge_4
+[My shiny app URL] https://sydneydlu.shinyapps.io/dsi_data_challenge_4/
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
