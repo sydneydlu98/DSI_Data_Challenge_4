@@ -17,6 +17,7 @@ library(medicaldata)
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
+    
     output$plot <- renderPlotly({
         
         strep_imp <- strep_tb %>%
