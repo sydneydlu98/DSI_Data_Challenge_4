@@ -10,7 +10,7 @@
 library(shiny)
 library(plotly)
 
-# Define UI for application that draws a bar plot
+# Define UI for application that draws the second plot
 shinyUI(
   
   # Use a fluid Bootstrap layout
@@ -33,12 +33,20 @@ shinyUI(
       helpText("3 = Moderate Deterioration"),
       helpText("4 = No Change"),
       helpText("5 = Moderate Improvement"), 
-      helpText("6 = Considerable Improvement")
+      helpText("6 = Considerable Improvement"),
+    
+    selectInput(inputId = "gender",
+                label = "Gender",
+                choices = c("Male" = "M",
+                            "Female" = "F")),
+    helpText("M = Male"),
+    helpText("F = Female"),
     ),
+    
     
     # Create a spot for the bar plot
     mainPanel(
-      plotlyOutput("plot")
-    )
+      plotlyOutput("plot2"), 
+      plotlyOutput("plot3"))
   )
 ))

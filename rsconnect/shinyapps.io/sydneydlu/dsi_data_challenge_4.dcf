@@ -5,7 +5,9 @@ account: sydneydlu
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 5104592
-bundleId: 5241459
+bundleId: 5243017
 url: https://sydneydlu.shinyapps.io/dsi_data_challenge_4/
-when: 1636656404.32835
-lastSyncTime: 1636656404.32835
+when: 1636689487.9683
+lastSyncTime: 1636689487.9683
+asMultiple: FALSE
+asStatic: FALSE
