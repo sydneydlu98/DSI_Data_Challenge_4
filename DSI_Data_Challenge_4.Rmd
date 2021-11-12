@@ -8,30 +8,10 @@ output: html_document
 [My github link] https://github.com/sydneydlu98/DSI_Data_Challenge_4
 [My shiny app URL] https://sydneydlu.shinyapps.io/dsi_data_challenge_4/
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 ```{r, message=FALSE}
-## load all the libraries
-library(dplyr)
-library(ggplot2)
-library(plotly)
-library(shiny)
-library(rsconnect)
-library(readr)
-library(medicaldata)
-
 View(strep_tb)
 ```
 
-```{r}
-# clean data with improved patients
-strep_imp <- strep_tb %>%
-  filter(improved == "TRUE") %>%
-  select(-dose_PAS_g)
 
-
-```
 
 
