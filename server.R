@@ -16,13 +16,12 @@ library(readr)
 library(medicaldata)
 
 shinyServer(function(input, output) {
-  
   # first plot - bar plot
   output$plot1 <- renderPlotly({
     strep_plot1 <- strep_tb %>%
       mutate(Case_VS_control = ifelse(arm %in% c("Streptomycin"), "Streptomycin", "Placebo")) %>%
       filter(Case_VS_control == input$Case_VS_control)
-
+    
     p1 <- ggplot(data = strep_plot1,
                  aes(x = rad_num,
                      y = strep_resistance,
@@ -69,8 +68,8 @@ shinyServer(function(input, output) {
   # third plot - scatter plot
   output$plot3 <- renderPlotly({
     strep_plot3 <- strep_tb %>%
-    mutate(Gender = ifelse(gender %in% c("M"), "Male", "Female")) %>%
-    mutate(Baseline_Cavitation = ifelse(baseline_cavitation %in% c("yes"), "Yes", "No"))
+      mutate(Gender = ifelse(gender %in% c("M"), "Male", "Female")) %>%
+      mutate(Baseline_Cavitation = ifelse(baseline_cavitation %in% c("yes"), "Yes", "No"))
     
     p3 <- ggplot(data = strep_plot3,
                  aes(
