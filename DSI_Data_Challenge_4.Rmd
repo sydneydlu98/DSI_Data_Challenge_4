@@ -8,9 +8,6 @@ output: html_document
 [My github link] https://github.com/sydneydlu98/DSI_Data_Challenge_4
 [My shiny app URL] https://sydneydlu.shinyapps.io/dsi_data_challenge_4/
 
-```{r, message=FALSE}
-View(strep_tb)
-```
 
 
 
