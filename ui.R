@@ -20,6 +20,23 @@ shinyUI(# Use a fluid Bootstrap layout
     sidebarLayout(
       # Define the sidebar with one input
       sidebarPanel(
+        
+        selectInput(
+          inputId = "Case_VS_control",
+          label = "Case or control:",
+          choices = c("Case" = "Streptomycin",
+                      "Control" = "Placebo")
+        ),
+        helpText("To see resistance to streptomycin plays an effect on treatment outcome"),
+        helpText("Case = Streptomycin"),
+        helpText("Control = Placebo"),
+        helpText("For x-axis:"),
+        helpText("1 = Death"),
+        helpText("2-3 = Deterioration"),
+        helpText("4 = No Change"),
+        helpText("5-6 = Improvement"),
+
+        
         selectInput(
           inputId = "improved",
           label = "Patients whose condition improved or not:",
@@ -27,13 +44,14 @@ shinyUI(# Use a fluid Bootstrap layout
                       "Not improved" = "FALSE")
         ),
         
+        helpText("To see if streptomycin is affective to treat tuberculosis"),
+        helpText("For x-axis:"),
         helpText("1 = Death"),
         helpText("2 = Considerable Deterioration"),
         helpText("3 = Moderate Deterioration"),
         helpText("4 = No Change"),
         helpText("5 = Moderate Improvement"),
         helpText("6 = Considerable Improvement"),
-        helpText("To see if Streptomycin actually improves tuberculosis"),
         
         selectInput(
           inputId = "baseline",
@@ -45,15 +63,19 @@ shinyUI(# Use a fluid Bootstrap layout
             "Baseline Cavitation" = list("Yes", "No")
           )
         ),
+        helpText("To see if gender plays an effect on this placebo-controlled clinical trial"),
+        helpText("For y-axis:"),
         helpText("Baseline Condition = Condition of the Patient at Baseline"),
         helpText("Baseline Temperature = Oral Temperature at Baseline (Degrees F)"),
         helpText("Baseline Sedimentation Rate = Erythrocyte Sedimentation Rate at baseline (millimeters per hour)"),
-        helpText("Baseline Cavitation = Cavitation of the Lungs on chest X-ray at baseline"),
+        helpText("Baseline Cavitation = Cavitation of the Lungs on chest X-ray at baseline")
+
       ),
       
       
       # Create a spot for the bar plot
-      mainPanel(plotlyOutput("plot2"),
+      mainPanel(plotlyOutput("plot1"),
+                plotlyOutput("plot2"),
                 plotlyOutput("plot3"))
     )
   )
