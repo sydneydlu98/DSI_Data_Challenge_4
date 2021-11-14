@@ -25,13 +25,14 @@ shinyServer(function(input, output) {
     p1 <- ggplot(data = strep_plot1,
                  aes(x = rad_num,
                      y = strep_resistance,
-                     col = Case_VS_control)) +
+                     col = Case_VS_control,
+                     group = Case_VS_control)) +
       geom_point() +
       geom_jitter() +
       labs(title = "Strep resistance VS Improvement status",
            x = "Numeric Rating of Chest X-ray at month 6",
            y = "Resistance to Streptomycin at 6m") +
-      guides(fill = guide_legend(title = "Case VS Control")) +
+      guides(fill=guide_legend(title="New Legend Title")) +
       theme(plot.title = element_text(
         hjust = 0.5,
         size = 15,
