@@ -1,9 +1,13 @@
 ---
 title: "DSI_Data_Challenge_4"
 author: "Dingxin Lu"
-date: "11/7/2021"
+date: "11/14/2021"
 output: html_document
 ---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, fig.align = "center")
+```
 
 [My github link] https://github.com/sydneydlu98/DSI_Data_Challenge_4
 
