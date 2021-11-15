@@ -53,7 +53,7 @@ shinyServer(function(input, output) {
                  aes(x = rad_num,
                      fill = Case_VS_control)) +
       geom_bar() +
-      labs(title = "Case VS control for Improvement Status",
+      labs(title = "Case VS Placebo for Improvement Status",
            x = "Numeric Rating of Chest X-ray at month 6",
            y = "Count") +
       guides(fill = guide_legend(title = "Streptomycin VS Placebo")) +
@@ -82,7 +82,7 @@ shinyServer(function(input, output) {
       geom_jitter() +
       labs(x = "Numeric Rating of Chest X-ray at month 6",
            y = "Baseline Variables",
-           title = "Baseline Variables VS Improvement Status") +
+           title = "Does gender alter study result?") +
       theme(plot.title = element_text(
         hjust = 0.5,
         size = 15,
